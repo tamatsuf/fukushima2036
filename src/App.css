@@ -179,6 +179,18 @@
   background: #edf6fb;
 }
 
+.status-message {
+  margin-top: 12px;
+  color: #234b63;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.error-message {
+  color: #a33232;
+}
+
 .input-label {
   margin-bottom: 10px;
   color: #234b63;

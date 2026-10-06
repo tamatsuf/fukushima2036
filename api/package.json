@@ -1,0 +1,13 @@
+{
+  "name": "fukushima2036-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.7.2"
+  }
+}
