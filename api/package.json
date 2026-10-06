@@ -3,11 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
   "main": "src/functions/*.js",
   "scripts": {
     "start": "func start"
   },
   "dependencies": {
-    "@azure/functions": "^4.7.2"
+    "@azure/functions": "^4.7.2",
+    "openai": "^7.23.0"
   }
 }
