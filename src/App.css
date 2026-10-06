@@ -1,0 +1,273 @@
+.app-shell {
+  position: relative;
+  width: min(100%, 430px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 14px 18px 32px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dfeaf2;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0f9bd7, #2fbf8f);
+  transition: width 240ms ease;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 4px 10px;
+}
+
+.topbar-step,
+.topbar-label,
+.screen-label,
+.card-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topbar-step {
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: #0f7ac1;
+}
+
+.topbar-label {
+  color: #1b6c5d;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 68px);
+  padding-top: 12px;
+}
+
+.start-screen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-badge {
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #0f6b8d;
+  background: #dbf1ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.start-screen h1 {
+  margin-top: 18px;
+  color: #0d3f58;
+  font-size: clamp(40px, 12vw, 64px);
+  letter-spacing: -0.06em;
+}
+
+.lead {
+  margin-top: 12px;
+  max-width: 300px;
+  color: #3f5868;
+  font-size: clamp(18px, 5vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.sun {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6c7 0%, #ffd66b 45%, #ffba4a 100%);
+  box-shadow: 0 0 60px rgba(255, 184, 62, 0.45);
+}
+
+.screen h2 {
+  margin: 4px 0 20px;
+  color: #0d3f58;
+  font-size: clamp(28px, 8vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+}
+
+.screen-label {
+  color: #0f7ac1;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.theme-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.option-button,
+.primary-button,
+.secondary-button {
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.option-button {
+  border: 2px solid #dfeaf2;
+  background: #fff;
+  color: #0f3a4d;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(18, 77, 96, 0.04);
+}
+
+.option-button.selected {
+  border-color: #25a6d8;
+  background: #eaf8ff;
+  color: #0c5a7b;
+  box-shadow: 0 8px 18px rgba(37, 166, 216, 0.16);
+}
+
+.option-button:active,
+.primary-button:active,
+.secondary-button:active {
+  transform: scale(0.98);
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #0a9fd5, #2bb98c);
+  box-shadow: 0 12px 22px rgba(26, 161, 204, 0.2);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  box-shadow: none;
+}
+
+.secondary-button {
+  margin-top: 12px;
+  color: #0c5a7b;
+  background: #edf6fb;
+}
+
+.input-label {
+  margin-bottom: 10px;
+  color: #234b63;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+textarea {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #d9eaf5;
+  border-radius: 18px;
+  resize: vertical;
+  color: #103d4d;
+  background: #fff;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  border-color: #22a5d8;
+  outline: 3px solid rgba(34, 165, 216, 0.14);
+}
+
+.result-screen {
+  padding-bottom: 8px;
+}
+
+.result-screen h2 {
+  margin-bottom: 16px;
+}
+
+.result-card {
+  margin-bottom: 12px;
+  padding: 18px;
+  border: 1px solid #dfeaf2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(12, 71, 94, 0.05);
+}
+
+.card-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #0f7ac1;
+}
+
+.title-card h3 {
+  margin: 0 0 8px;
+  color: #123f52;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.result-card p,
+.result-card li {
+  color: #3e5b68;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.result-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.blue-card {
+  border-color: #c7edff;
+  background: #f2fbff;
+}
+
+.green-card {
+  border-color: #cfeee0;
+  background: #f1fbf6;
+}
+
+@media (min-width: 360px) {
+  .app-shell {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
