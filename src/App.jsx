@@ -37,6 +37,8 @@ function App() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
+  const apiUrl = import.meta.env.VITE_API_URL || '/api/generate'
+
   const currentStep = stepLabels[step]
 
   const goNext = () => setStep((current) => Math.min(current + 1, 4))
@@ -49,21 +51,30 @@ function App() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role: selectedRole, theme: selectedTheme, idea }),
       })
 
       if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`)
+        let errorDetails = '未来アイデアの生成に失敗しました。'
+        try {
+          const errorBody = await response.json()
+          if (typeof errorBody?.error === 'string' && errorBody.error) {
+            errorDetails = errorBody.error
+          }
+        } catch {
+          // Ignore invalid JSON error responses.
+        }
+        throw new Error(`${response.status}: ${errorDetails}`)
       }
 
       setResult(await response.json())
       goNext()
     } catch (error) {
       console.error('Failed to generate future idea:', error)
-      setErrorMessage('未来アイデアの生成に失敗しました。もう一度お試しください。')
+      setErrorMessage(error instanceof Error ? error.message : '未来アイデアの生成に失敗しました。もう一度お試しください。')
     } finally {
       setIsGenerating(false)
     }
